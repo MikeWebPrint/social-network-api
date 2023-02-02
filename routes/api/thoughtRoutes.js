@@ -28,4 +28,8 @@ router
 // /api/applications/:applicationId/tags/:tagId
 // router.route('/:applicationId/tags/:tagId').delete(removeTag);
 
+
+// create and delete reactions to thoughts
+
+
 module.exports = router;

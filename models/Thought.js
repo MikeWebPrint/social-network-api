@@ -15,7 +15,7 @@ const thoughtSchema = new Schema(
     username: {
       type: String,
       required: true,
-    }
+    },
     thoughtText: {
       type: String,
       required: true,
@@ -36,5 +36,4 @@ const thoughtSchema = new Schema(
   }
 );
 
-
-module.exports = thoughtSchema;
+module.exports = { thoughtSchema, reactionSchema };
