@@ -5,6 +5,16 @@ const reactionSchema = new Schema(
     reactionId: {
       type: String
     },
+    reactionBody: {
+      type: String,
+      required: true,
+      min: 1,
+      max: 280
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    }
 
   }
 )
@@ -31,7 +41,7 @@ const thoughtSchema = new Schema(
   }
 );
 
-const Thought = model('Thought', thoughtSchema);
+const Thought = model('thought', thoughtSchema);
 
 
 module.exports = { Thought, reactionSchema };

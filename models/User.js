@@ -14,9 +14,6 @@ const userSchema = new Schema(
       required: true,
       unique: true,
       match: /.+\@.+\..+/,
-      // *****************
-      // must match valid email address -- validation!!!!
-      // *******************
     },
     thoughts: [{
       type: Schema.Types.ObjectId, 
