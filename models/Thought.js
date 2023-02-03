@@ -3,8 +3,7 @@ const { Schema, model } = require('mongoose');
 const reactionSchema = new Schema(
   {
     reactionId: {
-      type: String,
-      default: new Obl
+      type: String
     },
 
   }
@@ -12,10 +11,6 @@ const reactionSchema = new Schema(
 
 const thoughtSchema = new Schema(
   {
-    username: {
-      type: String,
-      required: true,
-    },
     thoughtText: {
       type: String,
       required: true,
@@ -36,4 +31,7 @@ const thoughtSchema = new Schema(
   }
 );
 
-module.exports = { thoughtSchema, reactionSchema };
+const Thought = model('Thought', thoughtSchema);
+
+
+module.exports = { Thought, reactionSchema };

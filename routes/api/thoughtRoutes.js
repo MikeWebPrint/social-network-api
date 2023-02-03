@@ -1,27 +1,27 @@
 const router = require('express').Router();
-// const {
-//   getApplications,
-//   getSingleApplication,
-//   createApplication,
-//   updateApplication,
-//   deleteApplication,
-//   addTag,
-//   removeTag,
-// } = require('../../controllers/appController');
+const {
+  getThoughts,
+  getSingleThought,
+  createThought,
+  deleteThought,
+  updateThought
+} = require('../../controllers/thoughtController');
 
 // /api/applications
 // router.route('/').get(getApplications).post(createApplication);
-router.route('/').
+// router.route('/').
 // /api/applications/:applicationId
-router
+// router
   // .route('/:applicationId')
   // .get(getSingleApplication)
   // .put(updateApplication)
   // .delete(deleteApplication);
 
-  router.get('/', (req, res) => {
-    res.send('Birds home page')
-  })
+
+  router.route('/').get(getThoughts).post(createThought);
+
+  router.route('/:thoughtId').get(getSingleThought).delete(deleteThought);
+
 // /api/applications/:applicationId/tags
 // router.route('/:applicationId/tags').post(addTag);
 

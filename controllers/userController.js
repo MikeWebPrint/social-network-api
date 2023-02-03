@@ -1,5 +1,5 @@
 const { ObjectId } = require('mongoose').Types;
-const { Thought, User } = require('../models');
+const { User } = require('../models/');
 
 module.exports = {
   getUsers(req, res) {
