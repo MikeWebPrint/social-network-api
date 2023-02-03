@@ -1,3 +1,5 @@
+const { Schema } = require("mongoose");
+
 const usernames = [
   'Walter',
   'Skyler',
@@ -63,7 +65,10 @@ const getReactions = (int) => {
   for (let i = 0; i < int; i++) {
     results.push({
       reactionBody: getRandomArrItem(possibleReactions),
-      username: getRandomName(),
+      username: {
+       type: Schema.Types.ObjectId,
+       ref: 'User' 
+      },
     });
   }
   return results;
