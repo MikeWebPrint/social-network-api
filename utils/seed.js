@@ -12,19 +12,19 @@ connection.once('open', async () => {
 
   const users = [];
   
-  for (let i = 0; i < 20; i++) {
-    const username = getRandomName();
-    const email = getEmail(username);
-    const thoughts = getRandomThoughts(3);
+  // for (let i = 0; i < 20; i++) {
+  //   const username = getRandomName();
+  //   const email = getEmail(username);
+  //   const thoughts = getRandomThoughts(3);
 
-    users.push({
-      username,
-      email,
-      thoughts
-    });
-  }
+  //   users.push({
+  //     username,
+  //     email,
+  //     thoughts
+  //   });
+  // }
 
-  await User.collection.insertMany(users);
+  // await User.collection.insertMany(users);
   // await Thought.collection.insertMany(thoughts);
 
   console.table(users);

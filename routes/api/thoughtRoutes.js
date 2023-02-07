@@ -4,32 +4,26 @@ const {
   getSingleThought,
   createThought,
   deleteThought,
-  updateThought
+  updateThought,
+  addReaction,
+  removeReaction
 } = require('../../controllers/thoughtController');
-
-// /api/applications
-// router.route('/').get(getApplications).post(createApplication);
-// router.route('/').
-// /api/applications/:applicationId
-// router
-  // .route('/:applicationId')
-  // .get(getSingleApplication)
-  // .put(updateApplication)
-  // .delete(deleteApplication);
+// const { remove } = require('../../models/User');
 
 
+
+// /api/thoughts/
   router.route('/').get(getThoughts).post(createThought);
 
-  router.route('/:thoughtId').get(getSingleThought).delete(deleteThought);
+  // /api/thoughts/:thoughtId
+  router.route('/:thoughtId').get(getSingleThought).delete(deleteThought).put(updateThought);
 
-// /api/applications/:applicationId/tags
-// router.route('/:applicationId/tags').post(addTag);
+// /api/thoughts/:thoughtId/reactions
+router.route('/:thoughtId/reactions').post(addReaction)
 
-// /api/applications/:applicationId/tags/:tagId
-// router.route('/:applicationId/tags/:tagId').delete(removeTag);
+// /api/thoughts/:thoughtId/reactions/:reactionId
+router.route('/:thoughtId/reactions/:reactionId').delete(removeReaction);
 
-
-// create and delete reactions to thoughts
 
 
 module.exports = router;
